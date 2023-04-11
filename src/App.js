@@ -3,6 +3,9 @@ import UserForm from "./components/Features/UserForm/UserForm";
 import Card from "./components/UI/Card/Card";
 import UserTable from "./components/Features/UserTable/UserTable";
 import {useState} from "react";
+import Modal from "./components/UI/Modals/Modal/Modal";
+import Button from "./components/UI/Buttons/Button/Button";
+import ErrorModal from "./components/UI/Modals/ErrorModal/ErrorModal";
 
 function App() {
 
@@ -30,13 +33,26 @@ function App() {
             return [...prevState, user]
         })
     };
+
+    const [modalContent, setModalContent] = useState(null)
+
+    const errorModal = <ErrorModal message={"Enter valid age"}/>
+
     return (
-        <div>
+        <>
+            <Button onClick={() => setModalContent(errorModal)}>
+                Open Modal
+            </Button>
+            <Modal
+                title={"Modal title"}
+                onClose={() => setModalContent(null)}>
+                {modalContent}
+            </Modal>
             <UserForm getUser={(user) => addUser(user)}/>
             {users.length > 0 && <Card>
                 <UserTable contents={users}/>
             </Card>}
-        </div>
+        </>
     );
 }
 

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Input from "../../UI/Input/Input";
 import Card from "../../UI/Card/Card";
-import Button from "../../UI/Button/Button";
+import Button from "../../UI/Buttons/Button/Button";
 
 const UserForm = ({getUser}) => {
     const [user, setUser] = useState(
