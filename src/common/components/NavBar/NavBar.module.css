@@ -1,0 +1,8 @@
+.navbar {
+    align-items: center;
+    background-color: #007bff;
+    display: flex;
+    height: 40px;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
