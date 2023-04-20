@@ -1,26 +1,32 @@
-import Card from "../../../common/components/Card/Card";
-import {useContext} from "react";
 import {FoodItem} from "../FoodItem/FoodItem";
+import styles from "./FoodItems.module.css"
+import CardContainer from "../../../common/components/CardContainer/CardContainer";
+import {useContext} from "react";
 import FoodAppContext from "../../context/FoodAppContext";
 
 const FoodItems = () => {
-    const temp = useContext(FoodAppContext)
-    //console.log(foodItems)
+    const {foodItems} = useContext(FoodAppContext)
+
+
+    const foodItemComponents = foodItems.map(foodItem =>
+        <FoodItem
+            key={foodItem.id}
+            id={foodItem.id}
+            name={foodItem.name}
+            image={foodItem.image}
+            price={foodItem.price}
+            quantity={foodItem.quantity}
+        />
+    )
 
     return (
-        <Card>
-            {temp.foodItems.map(foodItem =>
-                <FoodItem
-                    key={foodItem.id}
-                    id={foodItem.id}
-                    name={foodItem.name}
-                    picture={foodItem.picture}
-                    price={foodItem.price}
-                    quantity={foodItem.quantity}
-                />
-            )}
-        </Card>
+        <div className={styles.foodItems}>
+            <CardContainer>
+                {foodItemComponents}
+            </CardContainer>
+        </div>
     )
 }
+
 
 export default FoodItems;

@@ -1,17 +1,7 @@
-import './App.css';
 import FoodApp from "./FoodApp/FoodApp";
 
-
 function App() {
-
-
-    return (
-        <>
-            {/*<UserNameAndAgeApp/>*/}
-            <FoodApp/>
-        </>
-
-    );
+    return <FoodApp/>
 }
 
 export default App;

@@ -4,7 +4,7 @@ import styles from "./FoodItem.module.css";
 import Button from "../../../common/components/Buttons/Button/Button";
 import FoodAppContext from "../../context/FoodAppContext";
 
-export const FoodItem = ({id, name, picture, price}) => {
+export const FoodItem = ({id, name, image, price}) => {
     const {addToCart} = useContext(FoodAppContext)
     const [quantity, setQuantity] = useState(1)
     const updateQuantity = (event) => {
@@ -17,7 +17,7 @@ export const FoodItem = ({id, name, picture, price}) => {
             {
                 id: id,
                 name: name,
-                picture: picture,
+                image: image,
                 price: price,
                 quantity: Number(quantity)
             })
@@ -26,10 +26,10 @@ export const FoodItem = ({id, name, picture, price}) => {
     }
 
     return (
-        <form>
-            <Card>
+        <Card className={styles.mainCard}>
+            <form>
                 <div className={styles.cardContent}>
-                    <img className={styles.cardImage} src={picture} alt={name}/>
+                    <img className={styles.cardImage} src={image} alt={name}/>
                     <div style={{width: "70%"}}>
                         <div className={styles.foodCard}>
                             <h3>{name}</h3>
@@ -47,7 +47,7 @@ export const FoodItem = ({id, name, picture, price}) => {
                         </div>
                     </div>
                 </div>
-            </Card>
-        </form>
+            </form>
+        </Card>
     )
 }
