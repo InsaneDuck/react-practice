@@ -1,7 +1,7 @@
 import FoodApp from "./FoodApp/FoodApp";
 
 function App() {
-    return <FoodApp/>
+    return <FoodApp/>;
 }
 
 export default App;

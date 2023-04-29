@@ -9,11 +9,11 @@ const FoodApp = () => {
         <FoodContextProvider>
             <FoodAppSub/>
         </FoodContextProvider>
-    )
-}
+    );
+};
 
 const FoodAppSub = () => {
-    const {modalContent, setModalContent} = useContext(FoodAppContext)
+    const {modalContent, setModalContent} = useContext(FoodAppContext);
     return (
         <>
             <Modal title={"Cart"} onClose={() => setModalContent(null)}>
@@ -22,7 +22,7 @@ const FoodAppSub = () => {
             <FoodBar/>
             <FoodItems/>
         </>
-    )
-}
+    );
+};
 
 export default FoodApp;

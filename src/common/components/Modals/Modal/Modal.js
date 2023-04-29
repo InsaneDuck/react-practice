@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "../../Card/Card";
-import styles from "./Modal.module.css"
-import headerStyles from "./ModalHeader.module.css"
+import styles from "./Modal.module.css";
+import headerStyles from "./ModalHeader.module.css";
 import CloseButton from "../../Buttons/CloseButton/CloseButton";
 
 const Modal = ({children, title, onClose}) => {
@@ -11,9 +11,9 @@ const Modal = ({children, title, onClose}) => {
 
     const closeModal = (event) => {
         if (event.target === event.currentTarget) {
-            onClose()
+            onClose();
         }
-    }
+    };
 
     return (
         <div className={styles.modalOverlay} onClick={closeModal}>
@@ -23,7 +23,7 @@ const Modal = ({children, title, onClose}) => {
             </Card>
         </div>
     );
-}
+};
 
 const ModalHeader = ({title, onClick}) => {
     return (
@@ -33,7 +33,7 @@ const ModalHeader = ({title, onClick}) => {
             </span>
             <CloseButton onClick={onClick}/>
         </div>
-    )
-}
+    );
+};
 
 export default Modal;

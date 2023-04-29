@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./Input.module.css"
+import style from "./Input.module.css";
 
 const Input = ({label, name, type, value, onChange}) => {
     return (
@@ -17,7 +17,7 @@ const Input = ({label, name, type, value, onChange}) => {
                 onChange={(event) => onChange(event.target.value)}
             />
         </label>
-    )
-}
+    );
+};
 
 export default Input;

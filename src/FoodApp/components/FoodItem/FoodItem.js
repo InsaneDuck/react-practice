@@ -5,14 +5,14 @@ import Button from "../../../common/components/Buttons/Button/Button";
 import FoodAppContext from "../../context/FoodAppContext";
 
 export const FoodItem = ({id, name, image, price}) => {
-    const {addToCart} = useContext(FoodAppContext)
-    const [quantity, setQuantity] = useState(1)
+    const {addToCart} = useContext(FoodAppContext);
+    const [quantity, setQuantity] = useState(1);
     const updateQuantity = (event) => {
-        setQuantity(event.target.value)
+        setQuantity(event.target.value);
     };
 
     const add = (event) => {
-        event.preventDefault()
+        event.preventDefault();
         addToCart(
             {
                 id: id,
@@ -20,17 +20,17 @@ export const FoodItem = ({id, name, image, price}) => {
                 image: image,
                 price: price,
                 quantity: Number(quantity)
-            })
+            });
         //reset after adding
-        setQuantity(1)
-    }
+        setQuantity(1);
+    };
 
     return (
         <Card className={styles.mainCard}>
-            <form>
-                <div className={styles.cardContent}>
-                    <img className={styles.cardImage} src={image} alt={name}/>
-                    <div style={{width: "70%"}}>
+            <div className={styles.cardContent}>
+                <img className={styles.cardImage} src={image} alt={name}/>
+                <div style={{width: "70%"}}>
+                    <form>
                         <div className={styles.foodCard}>
                             <h3>{name}</h3>
                             <input
@@ -45,9 +45,9 @@ export const FoodItem = ({id, name, image, price}) => {
                             <h2>{price}</h2>
                             <Button type={"submit"} onClick={add}>+ Add</Button>
                         </div>
-                    </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </Card>
-    )
-}
+    );
+};
