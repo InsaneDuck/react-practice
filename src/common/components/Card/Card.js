@@ -5,7 +5,7 @@ const Card = ({children, className, id, onClick}) => {
 
     return (
         <div
-            className={`${style.card} ${className}`}
+            className={className? `${style.card} ${className}`:`${style.card}`}
             onClick={onClick}
             key={id}
         >
